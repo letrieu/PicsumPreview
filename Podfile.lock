@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (5.0.4)
+  - Hero (1.5.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Nuke (8.4.0)
+  - ObjectMapper (3.5.2)
+  - RxSwift (5.1.0)
+  - SkeletonView (1.8.6)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Hero
+  - Moya
+  - Nuke
+  - ObjectMapper
+  - RxSwift
+  - SkeletonView
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Hero
+    - Moya
+    - Nuke
+    - ObjectMapper
+    - RxSwift
+    - SkeletonView
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: 0fe5fd24b4298dc377a6550da7d5f1b30e286fcb
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Nuke: fa6f784c4f7e1c0f9313668510186c68b7af2509
+  ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  SkeletonView: 0bf463145522c0c551b76a829b397e2a15a16d46
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 856259db113743efa77cd53525782712f5a4b3e0
+
+COCOAPODS: 1.8.3

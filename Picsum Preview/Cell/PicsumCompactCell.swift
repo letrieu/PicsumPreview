@@ -1,0 +1,86 @@
+//
+//  PicsumCompactCell.swift
+//  Picsum Preview
+//
+//  Created by TrieuLD on 8/11/20.
+//  Copyright © 2020 TrieuLD. All rights reserved.
+//
+
+import UIKit
+import Nuke
+import SkeletonView
+
+class PicsumCompactCell: UICollectionViewCell {
+    var containerView: UIView!
+    var thumbView: UIImageView!
+    var titleLabel: UILabel!
+    var subTitleLabel: UILabel!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        containerView = UIView()
+        containerView.clipsToBounds = true
+        containerView.backgroundColor = .white
+        containerView.layer.cornerRadius = 8
+        contentView.addSubview(containerView)
+        
+        thumbView = UIImageView()
+        thumbView.clipsToBounds = true
+        thumbView.backgroundColor = .gray
+        thumbView.isSkeletonable = true
+        containerView.addSubview(thumbView)
+        
+        titleLabel = UILabel()
+        titleLabel.textColor = .darkGray
+        titleLabel.numberOfLines = 2
+        titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        containerView.addSubview(titleLabel)
+        
+        subTitleLabel = UILabel()
+        subTitleLabel.textColor = .gray
+        subTitleLabel.font = .systemFont(ofSize: 12)
+        containerView.addSubview(subTitleLabel)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let contentWidth = contentView.width
+        
+        containerView.frame = contentView.bounds
+        
+        thumbView.frame = CGRect(x: 0, y: 0, width: contentWidth, height: contentWidth)
+        titleLabel.frame = CGRect(x: UICommonValue.defaultSpacing, y: thumbView.bottom + UICommonValue.defaultSpacing, width: thumbView.width - 2 * UICommonValue.defaultSpacing, height: 20)
+        subTitleLabel.frame = CGRect(x: titleLabel.left, y: titleLabel.bottom, width: titleLabel.width, height: 16)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func layoutCellWithObject(_ viewModel: PhotoViewModel) {
+        
+        if let imageUrl = URL(string: viewModel.thumbUrl) {
+            
+            let request = ImageRequest(
+                url: imageUrl,
+                processors: [ImageProcessor.Resize(size: thumbView.bounds.size)]
+            )
+            
+            let options = ImageLoadingOptions(
+                failureImage: UIImage(named: "fail"),
+                contentModes: .init(success: .scaleAspectFill, failure: .center, placeholder: .center)
+            )
+            
+            thumbView.showAnimatedGradientSkeleton()
+            Nuke.loadImage(with: request, options: options, into: thumbView, completion: { [weak self] result in
+                self?.thumbView.hideSkeleton()
+            })
+        }
+        
+        self.titleLabel.text = viewModel.title
+        self.subTitleLabel.text = viewModel.subTitle
+        
+    }
+}

@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84843B8124E2DFAB00615916 /* PicsumProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8024E2DFAB00615916 /* PicsumProvider.swift */; };
+		84843B8724E2E25100615916 /* PicsumCompactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8624E2E25100615916 /* PicsumCompactCell.swift */; };
+		84843B8924E2E26400615916 /* PicsumRegularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8824E2E26400615916 /* PicsumRegularCell.swift */; };
+		84843B8C24E2E3AE00615916 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8B24E2E3AE00615916 /* PhotoItem.swift */; };
+		84843B8F24E2E4AA00615916 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8E24E2E4AA00615916 /* PhotoViewModel.swift */; };
+		84843B9224E2E96700615916 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B9124E2E96700615916 /* UIView+Extensions.swift */; };
+		84843B9524E2E9DD00615916 /* UICommonValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B9424E2E9DD00615916 /* UICommonValue.swift */; };
+		84843B9A24E2EFE300615916 /* PhotoCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B9924E2EFE300615916 /* PhotoCollectionViewLayout.swift */; };
+		84F2D5F424E254920085D985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2D5F324E254920085D985 /* AppDelegate.swift */; };
+		84F2D5F824E254920085D985 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2D5F724E254920085D985 /* ViewController.swift */; };
+		84F2D5FB24E254920085D985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F2D5F924E254920085D985 /* Main.storyboard */; };
+		84F2D5FD24E254950085D985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F2D5FC24E254950085D985 /* Assets.xcassets */; };
+		84F2D60024E254950085D985 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F2D5FE24E254950085D985 /* LaunchScreen.storyboard */; };
+		B56D832347043A3154CBEA76 /* Pods_Picsum_Preview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335D7D4F9FDC4B19079E11D /* Pods_Picsum_Preview.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2627D62E34BF71D6A03412D5 /* Pods-Picsum Preview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picsum Preview.debug.xcconfig"; path = "Target Support Files/Pods-Picsum Preview/Pods-Picsum Preview.debug.xcconfig"; sourceTree = "<group>"; };
+		5335D7D4F9FDC4B19079E11D /* Pods_Picsum_Preview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picsum_Preview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84843B8024E2DFAB00615916 /* PicsumProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumProvider.swift; sourceTree = "<group>"; };
+		84843B8624E2E25100615916 /* PicsumCompactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumCompactCell.swift; sourceTree = "<group>"; };
+		84843B8824E2E26400615916 /* PicsumRegularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumRegularCell.swift; sourceTree = "<group>"; };
+		84843B8B24E2E3AE00615916 /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
+		84843B8E24E2E4AA00615916 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		84843B9124E2E96700615916 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		84843B9424E2E9DD00615916 /* UICommonValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICommonValue.swift; sourceTree = "<group>"; };
+		84843B9924E2EFE300615916 /* PhotoCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewLayout.swift; sourceTree = "<group>"; };
+		84F2D5F024E254920085D985 /* Picsum Preview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Picsum Preview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F2D5F324E254920085D985 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84F2D5F724E254920085D985 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84F2D5FA24E254920085D985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84F2D5FC24E254950085D985 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84F2D5FF24E254950085D985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84F2D60124E254950085D985 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86334E306CFAB634246C292C /* Pods-Picsum Preview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picsum Preview.release.xcconfig"; path = "Target Support Files/Pods-Picsum Preview/Pods-Picsum Preview.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84F2D5ED24E254920085D985 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56D832347043A3154CBEA76 /* Pods_Picsum_Preview.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54DDFE7D51A06BB80AAA92FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2627D62E34BF71D6A03412D5 /* Pods-Picsum Preview.debug.xcconfig */,
+				86334E306CFAB634246C292C /* Pods-Picsum Preview.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5D8AE655C3AEBCC3EB3A7BFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5335D7D4F9FDC4B19079E11D /* Pods_Picsum_Preview.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84843B7F24E2DF7900615916 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				84843B8024E2DFAB00615916 /* PicsumProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		84843B8324E2E20100615916 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84843B8624E2E25100615916 /* PicsumCompactCell.swift */,
+				84843B8824E2E26400615916 /* PicsumRegularCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84843B8A24E2E38000615916 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84843B8B24E2E3AE00615916 /* PhotoItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84843B8D24E2E49900615916 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84843B8E24E2E4AA00615916 /* PhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84843B9024E2E93700615916 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84843B9124E2E96700615916 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84843B9324E2E9CD00615916 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84843B9424E2E9DD00615916 /* UICommonValue.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		84843B9624E2EF5E00615916 /* CollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				84843B9924E2EFE300615916 /* PhotoCollectionViewLayout.swift */,
+			);
+			path = CollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		84F2D5E724E254920085D985 = {
+			isa = PBXGroup;
+			children = (
+				84F2D5F224E254920085D985 /* Picsum Preview */,
+				84F2D5F124E254920085D985 /* Products */,
+				54DDFE7D51A06BB80AAA92FE /* Pods */,
+				5D8AE655C3AEBCC3EB3A7BFD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84F2D5F124E254920085D985 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84F2D5F024E254920085D985 /* Picsum Preview.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84F2D5F224E254920085D985 /* Picsum Preview */ = {
+			isa = PBXGroup;
+			children = (
+				84843B9624E2EF5E00615916 /* CollectionViewLayout */,
+				84843B9324E2E9CD00615916 /* Common */,
+				84843B9024E2E93700615916 /* Extensions */,
+				84843B8D24E2E49900615916 /* ViewModel */,
+				84843B8A24E2E38000615916 /* Model */,
+				84843B8324E2E20100615916 /* Cell */,
+				84843B7F24E2DF7900615916 /* Provider */,
+				84F2D5F324E254920085D985 /* AppDelegate.swift */,
+				84F2D5F724E254920085D985 /* ViewController.swift */,
+				84F2D5F924E254920085D985 /* Main.storyboard */,
+				84F2D5FC24E254950085D985 /* Assets.xcassets */,
+				84F2D5FE24E254950085D985 /* LaunchScreen.storyboard */,
+				84F2D60124E254950085D985 /* Info.plist */,
+			);
+			path = "Picsum Preview";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84F2D5EF24E254920085D985 /* Picsum Preview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F2D60424E254950085D985 /* Build configuration list for PBXNativeTarget "Picsum Preview" */;
+			buildPhases = (
+				5F7808A9478571E9519B3895 /* [CP] Check Pods Manifest.lock */,
+				84F2D5EC24E254920085D985 /* Sources */,
+				84F2D5ED24E254920085D985 /* Frameworks */,
+				84F2D5EE24E254920085D985 /* Resources */,
+				4F55E868896080B4D1C615D4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Picsum Preview";
+			productName = "Picsum Preview";
+			productReference = 84F2D5F024E254920085D985 /* Picsum Preview.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84F2D5E824E254920085D985 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = TrieuLD;
+				TargetAttributes = {
+					84F2D5EF24E254920085D985 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 84F2D5EB24E254920085D985 /* Build configuration list for PBXProject "Picsum Preview" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84F2D5E724E254920085D985;
+			productRefGroup = 84F2D5F124E254920085D985 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84F2D5EF24E254920085D985 /* Picsum Preview */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84F2D5EE24E254920085D985 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F2D60024E254950085D985 /* LaunchScreen.storyboard in Resources */,
+				84F2D5FD24E254950085D985 /* Assets.xcassets in Resources */,
+				84F2D5FB24E254920085D985 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F55E868896080B4D1C615D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Picsum Preview/Pods-Picsum Preview-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Picsum Preview/Pods-Picsum Preview-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Picsum Preview/Pods-Picsum Preview-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F7808A9478571E9519B3895 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Picsum Preview-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84F2D5EC24E254920085D985 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F2D5F824E254920085D985 /* ViewController.swift in Sources */,
+				84843B8124E2DFAB00615916 /* PicsumProvider.swift in Sources */,
+				84843B8F24E2E4AA00615916 /* PhotoViewModel.swift in Sources */,
+				84843B8724E2E25100615916 /* PicsumCompactCell.swift in Sources */,
+				84843B8924E2E26400615916 /* PicsumRegularCell.swift in Sources */,
+				84F2D5F424E254920085D985 /* AppDelegate.swift in Sources */,
+				84843B9A24E2EFE300615916 /* PhotoCollectionViewLayout.swift in Sources */,
+				84843B9524E2E9DD00615916 /* UICommonValue.swift in Sources */,
+				84843B9224E2E96700615916 /* UIView+Extensions.swift in Sources */,
+				84843B8C24E2E3AE00615916 /* PhotoItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84F2D5F924E254920085D985 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84F2D5FA24E254920085D985 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84F2D5FE24E254950085D985 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84F2D5FF24E254950085D985 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84F2D60224E254950085D985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84F2D60324E254950085D985 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84F2D60524E254950085D985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2627D62E34BF71D6A03412D5 /* Pods-Picsum Preview.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78YNMJ4J2T;
+				INFOPLIST_FILE = "Picsum Preview/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.trieule95.Picsum-Preview";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84F2D60624E254950085D985 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86334E306CFAB634246C292C /* Pods-Picsum Preview.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78YNMJ4J2T;
+				INFOPLIST_FILE = "Picsum Preview/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.trieule95.Picsum-Preview";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84F2D5EB24E254920085D985 /* Build configuration list for PBXProject "Picsum Preview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F2D60224E254950085D985 /* Debug */,
+				84F2D60324E254950085D985 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F2D60424E254950085D985 /* Build configuration list for PBXNativeTarget "Picsum Preview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F2D60524E254950085D985 /* Debug */,
+				84F2D60624E254950085D985 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84F2D5E824E254920085D985 /* Project object */;
+}
