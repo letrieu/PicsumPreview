@@ -16,6 +16,8 @@ class PicsumCompactCell: UICollectionViewCell {
     var titleLabel: UILabel!
     var subTitleLabel: UILabel!
     
+    var viewModel: PhotoViewModel?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -46,13 +48,36 @@ class PicsumCompactCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let contentWidth = contentView.width
-        
         containerView.frame = contentView.bounds
         
-        thumbView.frame = CGRect(x: 0, y: 0, width: contentWidth, height: contentWidth)
-        titleLabel.frame = CGRect(x: UICommonValue.defaultSpacing, y: thumbView.bottom + UICommonValue.defaultSpacing, width: thumbView.width - 2 * UICommonValue.defaultSpacing, height: 20)
-        subTitleLabel.frame = CGRect(x: titleLabel.left, y: titleLabel.bottom, width: titleLabel.width, height: 16)
+        if let viewModel = self.viewModel {
+            switch viewModel.cellLayout {
+            case .compact:
+                let contentWidth = contentView.width
+                thumbView.frame = CGRect(x: 0, y: 0, width: contentWidth, height: contentWidth)
+                titleLabel.frame = CGRect(x: UICommonValue.defaultSpacing, y: thumbView.bottom + UICommonValue.defaultSpacing, width: thumbView.width - 2 * UICommonValue.defaultSpacing, height: contentView.height)
+                let titleSize = titleLabel.sizeThatFits(titleLabel.bounds.size)
+                titleLabel.height = titleSize.height
+                
+                subTitleLabel.frame = CGRect(x: titleLabel.left, y: titleLabel.bottom + UICommonValue.defaultSpacing/2, width: titleLabel.width, height: 16)
+                break
+            case .regular:
+                let contentHeight = contentView.height
+                
+                thumbView.frame = CGRect(x: 0, y: 0, width: contentHeight, height: contentHeight)
+                titleLabel.frame = CGRect(x: thumbView.right + UICommonValue.defaultSpacing,
+                                          y: UICommonValue.defaultSpacing,
+                                          width: contentView.width - thumbView.right - 2*UICommonValue.defaultSpacing,
+                                          height: contentView.height)
+                let titleSize = titleLabel.sizeThatFits(titleLabel.bounds.size)
+                titleLabel.height = titleSize.height
+                
+                subTitleLabel.frame = CGRect(x: titleLabel.left, y: titleLabel.bottom + UICommonValue.defaultSpacing/2, width: titleLabel.width, height: 16)
+                break
+                
+            }
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +85,8 @@ class PicsumCompactCell: UICollectionViewCell {
     }
     
     func layoutCellWithObject(_ viewModel: PhotoViewModel) {
+        
+        self.viewModel = viewModel
         
         if let imageUrl = URL(string: viewModel.thumbUrl) {
             

@@ -8,10 +8,16 @@
 
 import UIKit
 
+enum PhotoCellLayout {
+    case compact
+    case regular
+}
+
 class PhotoViewModel: NSObject {
     var title: String = ""
     var subTitle: String = ""
     var thumbUrl: String = ""
+    var cellLayout: PhotoCellLayout = .compact
     
     var item: PhotoItem?
     
@@ -21,7 +27,7 @@ class PhotoViewModel: NSObject {
         self.title = item.author ?? ""
         self.subTitle = "size: \(item.width ?? 0)x\(item.height ?? 0)"
         self.thumbUrl = item.download_url ?? ""
-        
     }
+    
     
 }

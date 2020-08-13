@@ -10,11 +10,18 @@ import UIKit
 
 class PhotoCollectionViewLayout: UICollectionViewFlowLayout {
     
+    var iPhoneCollumn: CGFloat = 1
+    var iPadCollumn: CGFloat = 1
+    var iPhoneLandCapseCollumn: CGFloat = 1
+    var iPadLandCapseCollumn: CGFloat = 1
+    
+    var heightRatio: CGFloat = 1
+    
     override init() {
         super.init()
         
-        self.minimumLineSpacing = UICommonValue.defaultSpacing
-        self.minimumInteritemSpacing = UICommonValue.defaultSpacing
+        self.minimumLineSpacing = UICommonValue.smallSpacing
+        self.minimumInteritemSpacing = UICommonValue.smallSpacing
         self.scrollDirection = .vertical
     }
     
@@ -24,14 +31,17 @@ class PhotoCollectionViewLayout: UICollectionViewFlowLayout {
     
     func sizeForItem(withCollectionViewSize: CGSize) -> CGSize {
         
-        var collum : CGFloat = 3
+        let collum = self.numberOfCollumn()
         
+        let itemWidth = (UICommonValue.screenWidth - (collum - 1)*UICommonValue.smallSpacing)/collum
+        
+        return CGSize(width: itemWidth, height: itemWidth * heightRatio)
+    }
+    
+    func numberOfCollumn() -> CGFloat {
         if UICommonValue.isLandscape {
-            collum = 4
+            return UICommonValue.isIpad ? iPadLandCapseCollumn : iPhoneLandCapseCollumn
         }
-        
-        let itemWidth = (UICommonValue.screenWidth - (collum - 1)*UICommonValue.defaultSpacing)/collum
-        
-        return CGSize(width: itemWidth, height: itemWidth + 70)
+        return UICommonValue.isIpad ? iPadCollumn : iPhoneCollumn
     }
 }
