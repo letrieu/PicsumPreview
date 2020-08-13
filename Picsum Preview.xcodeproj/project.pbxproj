@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843DE75424E59839005B54B1 /* MoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DE75324E59839005B54B1 /* MoreCollectionViewCell.swift */; };
 		84843B8124E2DFAB00615916 /* PicsumProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8024E2DFAB00615916 /* PicsumProvider.swift */; };
 		84843B8724E2E25100615916 /* PicsumCompactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8624E2E25100615916 /* PicsumCompactCell.swift */; };
 		84843B8C24E2E3AE00615916 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843B8B24E2E3AE00615916 /* PhotoItem.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2627D62E34BF71D6A03412D5 /* Pods-Picsum Preview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picsum Preview.debug.xcconfig"; path = "Target Support Files/Pods-Picsum Preview/Pods-Picsum Preview.debug.xcconfig"; sourceTree = "<group>"; };
 		5335D7D4F9FDC4B19079E11D /* Pods_Picsum_Preview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picsum_Preview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843DE75324E59839005B54B1 /* MoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		84843B8024E2DFAB00615916 /* PicsumProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumProvider.swift; sourceTree = "<group>"; };
 		84843B8624E2E25100615916 /* PicsumCompactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumCompactCell.swift; sourceTree = "<group>"; };
 		84843B8B24E2E3AE00615916 /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				84843B8624E2E25100615916 /* PicsumCompactCell.swift */,
+				843DE75324E59839005B54B1 /* MoreCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				84843B9524E2E9DD00615916 /* UICommonValue.swift in Sources */,
 				84843B9224E2E96700615916 /* UIView+Extensions.swift in Sources */,
 				84843B8C24E2E3AE00615916 /* PhotoItem.swift in Sources */,
+				843DE75424E59839005B54B1 /* MoreCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

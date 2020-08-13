@@ -30,7 +30,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupUI()
-        self.loadData()
+        isLoading = true
+        self.loadData() {[weak self] success in
+            self?.isLoading = false
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -116,6 +119,7 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PicsumCompactCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(MoreCollectionViewCell.self, forCellWithReuseIdentifier: "MoreCell")
         self.view.addSubview(collectionView)
         
         refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
@@ -125,7 +129,9 @@ class ViewController: UIViewController {
     
     @objc private func didPullToRefresh(_ sender: Any) {
         
+        isLoading = true
         self.loadData(more: false) { [weak self] success in
+            self?.isLoading = false
             self?.refreshControl.endRefreshing()
         }
     }
@@ -144,10 +150,16 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModels.count
+        return viewModels.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (indexPath.row == viewModels.count) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoreCell", for: indexPath)
+            
+            return cell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PicsumCompactCell
         
         let viewModel = viewModels[indexPath.row]
@@ -159,7 +171,18 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        if let cell: MoreCollectionViewCell = cell as? MoreCollectionViewCell {
+            if (!cell.indicatorView.isAnimating) {
+                cell.indicatorView.startAnimating()
+            }
+            
+            if (!isLoading) {
+                isLoading = true
+                self.loadData(more: true) {[weak self] success in
+                    self?.isLoading = false
+                }
+            }
+        }
     }
 }
 
@@ -170,6 +193,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         
         if let collectionViewLayout = collectionViewLayout as? PhotoCollectionViewLayout {
             
+            if indexPath.row == viewModels.count {
+                return collectionViewLayout.sizeForMoreItem(with: collectionView.bounds.size)
+            }
+            
             let viewModel = viewModels[indexPath.row]
             if (collectionViewLayout == compactCollectionViewLayout) {
                 viewModel.cellLayout = .compact
@@ -177,7 +204,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
                 viewModel.cellLayout = .regular
             }
             
-            return collectionViewLayout.sizeForItem(withCollectionViewSize: collectionView.bounds.size)
+            return collectionViewLayout.sizeForItem(with: collectionView.bounds.size)
         }
         return .zero
     }

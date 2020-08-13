@@ -29,13 +29,17 @@ class PhotoCollectionViewLayout: UICollectionViewFlowLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func sizeForItem(withCollectionViewSize: CGSize) -> CGSize {
+    func sizeForItem(with collectionViewSize: CGSize) -> CGSize {
         
         let collum = self.numberOfCollumn()
         
         let itemWidth = (UICommonValue.screenWidth - (collum - 1)*UICommonValue.smallSpacing)/collum
         
         return CGSize(width: itemWidth, height: itemWidth * heightRatio)
+    }
+    
+    func sizeForMoreItem(with collectionViewSize: CGSize) -> CGSize {
+        return CGSize(width: collectionViewSize.width, height: 40)
     }
     
     func numberOfCollumn() -> CGFloat {
