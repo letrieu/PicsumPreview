@@ -1,5 +1,5 @@
 //
-//  MoreCollectionViewCell.swift
+//  MoreCell.swift
 //  Picsum Preview
 //
 //  Created by TrieuLD on 8/13/20.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class MoreCollectionViewCell: UICollectionViewCell {
+class MoreCell: UICollectionViewCell {
     var indicatorView: UIActivityIndicatorView!
     var loadingLabel: UILabel!
     

@@ -118,8 +118,8 @@ class ViewController: UIViewController {
         collectionView.contentInset = .init(top: UICommonValue.defaultSpacing, left: 0, bottom: 0, right: 0)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(PicsumCompactCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.register(MoreCollectionViewCell.self, forCellWithReuseIdentifier: "MoreCell")
+        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(MoreCell.self, forCellWithReuseIdentifier: "MoreCell")
         self.view.addSubview(collectionView)
         
         refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
@@ -160,7 +160,7 @@ extension ViewController: UICollectionViewDataSource {
             return cell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PicsumCompactCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoCell
         
         let viewModel = viewModels[indexPath.row]
         cell.layoutCellWithObject(viewModel)
@@ -171,7 +171,7 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let cell: MoreCollectionViewCell = cell as? MoreCollectionViewCell {
+        if let cell: MoreCell = cell as? MoreCell {
             if (!cell.indicatorView.isAnimating) {
                 cell.indicatorView.startAnimating()
             }

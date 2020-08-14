@@ -1,5 +1,5 @@
 //
-//  PicsumCompactCell.swift
+//  PhotoCell.swift
 //  Picsum Preview
 //
 //  Created by TrieuLD on 8/11/20.
@@ -10,7 +10,7 @@ import UIKit
 import Nuke
 import SkeletonView
 
-class PicsumCompactCell: UICollectionViewCell {
+class PhotoCell: UICollectionViewCell {
     var containerView: UIView!
     var thumbView: UIImageView!
     var titleLabel: UILabel!
