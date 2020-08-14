@@ -33,7 +33,7 @@ class PhotoCollectionViewLayout: UICollectionViewFlowLayout {
         
         let collum = self.numberOfCollumn()
         
-        let itemWidth = (UICommonValue.screenWidth - (collum - 1)*UICommonValue.smallSpacing)/collum
+        let itemWidth = (collectionViewSize.width - (collum - 1)*UICommonValue.smallSpacing)/collum
         
         return CGSize(width: itemWidth, height: itemWidth * heightRatio)
     }

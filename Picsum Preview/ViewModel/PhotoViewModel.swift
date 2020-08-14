@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PhotoCellLayout {
+enum PhotoCellLayout: Int {
     case compact
     case regular
 }

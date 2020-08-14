@@ -1,5 +1,4 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'Picsum Preview' do
   use_frameworks!
@@ -10,6 +9,6 @@ target 'Picsum Preview' do
   pod 'Moya'
   pod 'ObjectMapper'
   pod 'SkeletonView'
-  pod 'Hero'
+  pod 'SecureDefaults', '1.0.5'
 
 end

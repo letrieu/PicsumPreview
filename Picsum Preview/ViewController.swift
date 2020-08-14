@@ -9,6 +9,7 @@
 import UIKit
 import Moya
 import ObjectMapper
+import SecureDefaults
 
 class ViewController: UIViewController {
     
@@ -16,8 +17,8 @@ class ViewController: UIViewController {
     
     var collectionView: UICollectionView!
     
-    let compactCollectionViewLayout = PhotoCollectionViewLayout()
-    let regularCollectionViewLayout = PhotoCollectionViewLayout()
+    let compactLayout = PhotoCollectionViewLayout()
+    let regularLayout = PhotoCollectionViewLayout()
     
     let refreshControl = UIRefreshControl()
     
@@ -25,10 +26,13 @@ class ViewController: UIViewController {
     
     var isLoading = false
     var currentPage = 0
+    var hasMore = true
+    var layoutType: PhotoCellLayout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.loadLocalData()
         self.setupUI()
         isLoading = true
         self.loadData() {[weak self] success in
@@ -40,9 +44,15 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         collectionView.frame = self.view.bounds
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     func loadData(more: Bool = false, completion: ((Bool) -> Void)? = nil) {
+        
+        if !hasMore {
+            completion?(false)
+            return
+        }
         
         let page = more ? currentPage : 0
         
@@ -54,7 +64,7 @@ class ViewController: UIViewController {
                         let photos = Mapper<PhotoItem>().mapArray(JSONArray: json)
                         
                         DispatchQueue.main.async { [weak self] in
-                            self?.updateDataWithPhotos(photos, page: page, loadMore: more)
+                            self?.updateDataWithPhotos(photos, page: page, loadMore: more, hasMore: photos.count > 0)
                             completion?(true)
                         }
                     }
@@ -70,7 +80,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateDataWithPhotos(_ photos: [PhotoItem], page: Int, loadMore: Bool) {
+    func updateDataWithPhotos(_ photos: [PhotoItem], page: Int, loadMore: Bool, hasMore: Bool) {
         
         currentPage = page + 1
         
@@ -92,29 +102,29 @@ class ViewController: UIViewController {
         
         segmentControl = UISegmentedControl(items: ["Compact", "Regular"])
         segmentControl.sizeToFit()
-        segmentControl.selectedSegmentIndex = 0
+        segmentControl.selectedSegmentIndex = layoutType.rawValue
         segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)], for: .normal)
         
         segmentControl.addTarget(self, action: #selector(segmentControllDidChangeValue(_:)), for: .valueChanged)
         
         self.navigationItem.titleView = segmentControl
         
+        compactLayout.iPhoneCollumn = 2
+        compactLayout.iPadCollumn = 3
+        compactLayout.iPhoneLandCapseCollumn = 3
+        compactLayout.iPadLandCapseCollumn = 5
+        compactLayout.heightRatio = 1.5
         
-        compactCollectionViewLayout.iPhoneCollumn = 2
-        compactCollectionViewLayout.iPadCollumn = 3
-        compactCollectionViewLayout.iPhoneLandCapseCollumn = 3
-        compactCollectionViewLayout.iPadLandCapseCollumn = 5
-        compactCollectionViewLayout.heightRatio = 1.5
+        regularLayout.iPhoneCollumn = 1
+        regularLayout.iPadCollumn = 2
+        regularLayout.iPhoneLandCapseCollumn = 2
+        regularLayout.iPadLandCapseCollumn = 2
+        regularLayout.heightRatio = 0.5
         
-        regularCollectionViewLayout.iPhoneCollumn = 1
-        regularCollectionViewLayout.iPadCollumn = 2
-        regularCollectionViewLayout.iPhoneLandCapseCollumn = 2
-        regularCollectionViewLayout.iPadLandCapseCollumn = 2
-        regularCollectionViewLayout.heightRatio = 0.5
-           
+        let layout = (layoutType == .compact) ? compactLayout : regularLayout
         
-        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: compactCollectionViewLayout)
-        collectionView.backgroundColor = .blue
+        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        collectionView.backgroundColor = .darkGray
         collectionView.contentInset = .init(top: UICommonValue.defaultSpacing, left: 0, bottom: 0, right: 0)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -125,6 +135,10 @@ class ViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
         collectionView.alwaysBounceVertical = true
         collectionView.refreshControl = refreshControl
+    }
+    
+    func loadLocalData() {
+        layoutType = PhotoCellLayout(rawValue: SecureDefaults.shared.integer(forKey: "photo_layout"))
     }
     
     @objc private func didPullToRefresh(_ sender: Any) {
@@ -139,12 +153,15 @@ class ViewController: UIViewController {
     @objc private func segmentControllDidChangeValue(_ sender: Any) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
-            collectionView.setCollectionViewLayout(compactCollectionViewLayout, animated: true)
+            collectionView.setCollectionViewLayout(compactLayout, animated: true)
             break
         default:
-            collectionView.setCollectionViewLayout(regularCollectionViewLayout, animated: true)
+            collectionView.setCollectionViewLayout(regularLayout, animated: true)
             break
         }
+        
+        layoutType = PhotoCellLayout(rawValue: segmentControl.selectedSegmentIndex)
+        SecureDefaults.shared.set(segmentControl.selectedSegmentIndex, forKey: "photo_layout")
     }
 }
 
@@ -198,7 +215,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             }
             
             let viewModel = viewModels[indexPath.row]
-            if (collectionViewLayout == compactCollectionViewLayout) {
+            if (collectionViewLayout == compactLayout) {
                 viewModel.cellLayout = .compact
             } else {
                 viewModel.cellLayout = .regular
